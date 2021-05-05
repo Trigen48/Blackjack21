@@ -398,7 +398,7 @@ namespace Blackjack21.ConsoleGame
             WriteHeadingLine("Player " + player.PlayerName + "'s turn Hand 1");
             bool exitCode = false;
 
-            while (!exitCode || player.FirstHandValue < PlayerHand.MAX_HAND_VALUE)
+            while (!exitCode && player.FirstHandValue < PlayerHand.MAX_HAND_VALUE)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 if (player.CanFold) { Console.WriteLine("  1 - Fold Hand"); }
@@ -551,7 +551,7 @@ namespace Blackjack21.ConsoleGame
             WriteHeadingLine("Player " + player.PlayerName + "'s turn Hand 2");
             bool exitCode = false;
 
-            while (!exitCode || player.SplitHandValue < PlayerHand.MAX_HAND_VALUE)
+            while (!exitCode && player.SplitHandValue < PlayerHand.MAX_HAND_VALUE)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
 

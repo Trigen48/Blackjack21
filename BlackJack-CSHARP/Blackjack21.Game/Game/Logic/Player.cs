@@ -273,7 +273,7 @@ namespace Blackjack21.Game.Logic
         /// </summary>
         public void SplitHandCards()
         {
-            if (this._playerHandType == PlayerHandType.SINGLE_HAND && this._playerHand[0].CardCount == 2 && this._playerHand[0].Cards[0] == this._playerHand[0].Cards[2])
+            if (this._playerHandType == PlayerHandType.SINGLE_HAND && this.FirstHand.HasTwoPairs)
             {
                 this._playerHandType = PlayerHandType.SPLIT_HAND;
                 AddSplitHandCard(this._playerHand[0].SplitHandCard());
