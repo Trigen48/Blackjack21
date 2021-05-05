@@ -2,7 +2,7 @@
  A blackjack21 assignment
 
 
-Blackjack21 C-Sharp
+Blackjack21 C-Sharp - Added 2021-05-05 , Minor fix 2021-05-06
 - Blackjack21.Game : The core libary containing all blackjack logic and models
 - Blackjack21.ConsoleGame : A test game using the game library
 - Blackjack21.ConsoleTestCase: Test the given cards and view results
