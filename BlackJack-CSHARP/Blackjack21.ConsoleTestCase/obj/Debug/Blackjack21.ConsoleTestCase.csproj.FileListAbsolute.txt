@@ -1,0 +1,10 @@
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\bin\Debug\BlackJack.exe.config
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\bin\Debug\BlackJack.exe
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\bin\Debug\BlackJack.pdb
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\bin\Debug\Blackjack21.Game.dll
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\bin\Debug\Blackjack21.Game.pdb
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\Blackjack21.ConsoleTestCase.csprojAssemblyReference.cache
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\Blackjack21.ConsoleTestCase.csproj.CoreCompileInputs.cache
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\Blackjack21.ConsoleTestCase.csproj.CopyComplete
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\BlackJack.exe
+C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\BlackJack.pdb

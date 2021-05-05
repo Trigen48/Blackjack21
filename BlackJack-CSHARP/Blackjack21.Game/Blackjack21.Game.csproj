@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19456ECD-7F54-485A-A702-A95CC22AD24B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blackjack21</RootNamespace>
+    <AssemblyName>Blackjack21.Game</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Game\BlackJackGame.cs" />
+    <Compile Include="Game\Exceptions\DeckEmptyException.cs" />
+    <Compile Include="Game\Exceptions\InvalidCardAction.cs" />
+    <Compile Include="Game\Exceptions\InvalidHandSplitException.cs" />
+    <Compile Include="Game\Exceptions\PlayerExistsException.cs" />
+    <Compile Include="Game\Exceptions\PlayerHandNotSplitException.cs" />
+    <Compile Include="Game\Exceptions\PlayerNameEmptyException.cs" />
+    <Compile Include="Game\Exceptions\PlayerNotFoundException.cs" />
+    <Compile Include="Game\Logic\Player.cs" />
+    <Compile Include="Game\Logic\PlayerHand.cs" />
+    <Compile Include="Game\Model\Card.cs" />
+    <Compile Include="Game\Logic\CardDeck.cs" />
+    <Compile Include="Game\Model\CardSymbol.cs" />
+    <Compile Include="Game\Model\CardType.cs" />
+    <Compile Include="Game\Model\PlayerHandResult.cs" />
+    <Compile Include="Game\Model\PlayerHandType.cs" />
+    <Compile Include="Game\Model\PlayerHandAction.cs" />
+    <Compile Include="Game\Helper\ShuffleList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack21.Game", "Blackjack21.Game\Blackjack21.Game.csproj", "{19456ECD-7F54-485A-A702-A95CC22AD24B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack21.ConsoleGame", "Blackjack21.ConsoleGame\Blackjack21.ConsoleGame.csproj", "{C4E06EFE-92B3-4CA1-B7F3-4044CAD1B399}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{81123A64-5AC7-4272-ADEA-C0806372031E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2882F17D-DA05-4477-98C5-ADA5FB002E95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{D8DA7CF2-BD79-4066-ADCA-9C95DCB115FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack21.ConsoleTestCase", "Blackjack21.ConsoleTestCase\Blackjack21.ConsoleTestCase.csproj", "{0446F69C-E3EE-461C-BF95-75B61E52BDE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack21.ConsoleTestFirstDraw", "Blackjack21.ConsoleTestFirstDraw\Blackjack21.ConsoleTestFirstDraw.csproj", "{C9D83BC9-4478-4436-97FA-C65A4EDCD903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack21.ConsoleTestDealerDraw", "Blackjack21.ConsoleTestDealerDraw\Blackjack21.ConsoleTestDealerDraw.csproj", "{913A4E48-B616-4C7E-A1DF-87E1E970D7B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19456ECD-7F54-485A-A702-A95CC22AD24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19456ECD-7F54-485A-A702-A95CC22AD24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19456ECD-7F54-485A-A702-A95CC22AD24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19456ECD-7F54-485A-A702-A95CC22AD24B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E06EFE-92B3-4CA1-B7F3-4044CAD1B399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E06EFE-92B3-4CA1-B7F3-4044CAD1B399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E06EFE-92B3-4CA1-B7F3-4044CAD1B399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E06EFE-92B3-4CA1-B7F3-4044CAD1B399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0446F69C-E3EE-461C-BF95-75B61E52BDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0446F69C-E3EE-461C-BF95-75B61E52BDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0446F69C-E3EE-461C-BF95-75B61E52BDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0446F69C-E3EE-461C-BF95-75B61E52BDE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9D83BC9-4478-4436-97FA-C65A4EDCD903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D83BC9-4478-4436-97FA-C65A4EDCD903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D83BC9-4478-4436-97FA-C65A4EDCD903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D83BC9-4478-4436-97FA-C65A4EDCD903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{913A4E48-B616-4C7E-A1DF-87E1E970D7B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913A4E48-B616-4C7E-A1DF-87E1E970D7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913A4E48-B616-4C7E-A1DF-87E1E970D7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913A4E48-B616-4C7E-A1DF-87E1E970D7B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19456ECD-7F54-485A-A702-A95CC22AD24B} = {81123A64-5AC7-4272-ADEA-C0806372031E}
+		{C4E06EFE-92B3-4CA1-B7F3-4044CAD1B399} = {D8DA7CF2-BD79-4066-ADCA-9C95DCB115FB}
+		{0446F69C-E3EE-461C-BF95-75B61E52BDE4} = {2882F17D-DA05-4477-98C5-ADA5FB002E95}
+		{C9D83BC9-4478-4436-97FA-C65A4EDCD903} = {2882F17D-DA05-4477-98C5-ADA5FB002E95}
+		{913A4E48-B616-4C7E-A1DF-87E1E970D7B4} = {2882F17D-DA05-4477-98C5-ADA5FB002E95}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {732A254F-ABB0-4587-A7F6-D06B2CBD6A18}
+	EndGlobalSection
+EndGlobal
