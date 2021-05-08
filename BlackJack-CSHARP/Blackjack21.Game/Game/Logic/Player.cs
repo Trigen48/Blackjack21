@@ -10,8 +10,8 @@ namespace Blackjack21.Game.Logic
     public class Player
     {
         // Store our hand in a list, a player can have an additional hand if they choose to split.
-        private readonly PlayerHand[] _playerHand; // a player can only split his hand once there for we use an array
-        private  PlayerHandType _playerHandType;
+        private readonly List<PlayerHand> _playerHand; // a player can only split his hand once there for we use an array
+        private PlayerHandType _playerHandType;
         private bool _playerInsured;
         private bool _playerIsuranceCorrect;
 
@@ -24,11 +24,13 @@ namespace Blackjack21.Game.Logic
         public Player(string playerName = "Player")
         {
             // set player default hands to 2
-            this._playerHand = new PlayerHand[] { new PlayerHand(), new PlayerHand() };
+            this._playerHand = new List<PlayerHand>();
             this._playerName = playerName;
-            this._playerHandType = PlayerHandType.SINGLE_HAND;
+            /*this._playerHandType = PlayerHandType.SINGLE_HAND;
             this._playerIsuranceCorrect = false;
-            this._playerInsured = false;
+            this._playerInsured = false;*/
+
+            ClearHands();
         }
 
         /// <summary>
@@ -174,7 +176,7 @@ namespace Blackjack21.Game.Logic
         {
             if (!CanDouble)
             {
-                throw new InvalidCardAction("Cannot double the player's hand, conditions not met");
+                throw new InvalidCardActionException("Cannot double the player's hand, conditions not met");
             }
             FirstHand.DoubleHandCard(card);
         }
@@ -186,7 +188,7 @@ namespace Blackjack21.Game.Logic
         {
             if (!CanFold)
             {
-                throw new InvalidCardAction("Cannot fold the player's hand, conditions not met");
+                throw new InvalidCardActionException("Cannot fold the player's hand, conditions not met");
             }
             this.FirstHand.Fold();
         }
@@ -198,14 +200,14 @@ namespace Blackjack21.Game.Logic
         {
             if (!CanStand)
             {
-                throw new InvalidCardAction("Cannot stand the player's hand, conditions not met");
+                throw new InvalidCardActionException("Cannot stand the player's hand, conditions not met");
             }
             this.FirstHand.Stand();
         }
 
 
 
-          /// <summary>
+        /// <summary>
         /// Gets if the player can double their hand
         /// </summary>
         public bool CanDoubleSplitHand
@@ -247,12 +249,12 @@ namespace Blackjack21.Game.Logic
         {
             if (!CanDoubleSplitHand)
             {
-                throw new InvalidCardAction("Cannot double the player's hand, conditions not met");
+                throw new InvalidCardActionException("Cannot double the player's hand, conditions not met");
             }
             this.SplitHand.DoubleHandCard(card);
         }
 
-     
+
 
         /// <summary>
         /// Stand on the player's current hand
@@ -261,7 +263,7 @@ namespace Blackjack21.Game.Logic
         {
             if (!CanStandSplitHand)
             {
-                throw new InvalidCardAction("Cannot stand the player's split hand, conditions not met");
+                throw new InvalidCardActionException("Cannot stand the player's split hand, conditions not met");
             }
             this.SplitHand.Stand();
         }
@@ -314,6 +316,8 @@ namespace Blackjack21.Game.Logic
             {
                 throw new PlayerHandNotSplitException();
             }
+
+            this._playerHand.Add(new PlayerHand());
             this._playerHand[1].AddCard(card);
         }
 
@@ -390,12 +394,12 @@ namespace Blackjack21.Game.Logic
 
             if (this.CurrentHandType == PlayerHandType.SINGLE_HAND)
             {
-                this.FirstHand.SetHandResult(dealer.FirstHand, true);
+                this.FirstHand.SetPlayerHandResult(dealer.FirstHand, true);
             }
             else
             {
-                this.FirstHand.SetHandResult(dealer.FirstHand);
-                this.SplitHand.SetHandResult(dealer.FirstHand);
+                this.FirstHand.SetPlayerHandResult(dealer.FirstHand);
+                this.SplitHand.SetPlayerHandResult(dealer.FirstHand);
             }
 
         }
@@ -405,8 +409,17 @@ namespace Blackjack21.Game.Logic
         /// </summary>
         public void ClearHands()
         {
-            this._playerHand[0].ClearCards();
-            this._playerHand[1].ClearCards(); // clear split hand cards
+
+            foreach (PlayerHand hand in this._playerHand)
+            {
+                hand.ClearCards();
+            }
+
+            _playerHand.Clear();
+
+            // Add a new player hand
+            _playerHand.Add(new PlayerHand());
+
             this._playerHandType = PlayerHandType.SINGLE_HAND;
             this._playerIsuranceCorrect = false;
             this._playerInsured = false;
@@ -422,21 +435,27 @@ namespace Blackjack21.Game.Logic
 
             result = "Player: " + PlayerName;
 
-            if(this.PlayerInsured)
+            if (this.PlayerInsured)
             {
                 result += "\n\n-- Player placed an insurance bet and ".ToUpper() + (this.PlayerIsuranceCorrect ? "WON" : "LOST") + "";
             }
-            
-            result+= "\n\n-- Hand Cards: \n";
+
+            result += "\n\n-- Hand Cards: \n";
             result += FirstHand.ToString();
 
 
-
-            if(this._playerHandType== PlayerHandType.SPLIT_HAND)
+            if (this._playerHandType == PlayerHandType.SPLIT_HAND)
             {
-                result += "\n-- Split Hand Cards: ";
+                result += "\n-- Split Hand(s) Cards: \n";
 
-                result += FirstHand.ToString();
+                for (int x = 1; x < this._playerHand.Count; x++)
+                {
+                    PlayerHand hand = this._playerHand[x];
+                    result += "** \n";
+                    result += hand.ToString();
+                    result += "\n";
+                }
+              
             }
             result += "------------------------------\n";
 

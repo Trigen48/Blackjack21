@@ -5,6 +5,7 @@
     /// </summary>
     public enum CardType : int
     {
+        NONE = 0,
         ACE = 1,
         TWO = 2,
         THREE = 3,

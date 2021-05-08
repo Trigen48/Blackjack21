@@ -42,7 +42,6 @@ namespace Blackjack21.Game.Logic
             const int CARDMAX = 13;
             const int SYMBOLMAX = 4;
 
-
             Clean();
             for (int deckIndex = 0; deckIndex < deckCount; deckIndex++)
             {
@@ -99,6 +98,15 @@ namespace Blackjack21.Game.Logic
 
             // Add shuffled cards to the play deck
             this._deckCards.AddRange(this._deckCopy);
+        }
+
+        /// <summary>
+        /// Get the playing card deck as an array
+        /// </summary>
+        /// <returns>Returns the card deck as an array</returns>
+        public Card[] DeckToArray()
+        {
+            return this._deckCards.ToArray();
         }
 
         /// <summary>

@@ -8,3 +8,13 @@ C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\Blackjack21.Cons
 C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\Blackjack21.ConsoleTestCase.csproj.CopyComplete
 C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\BlackJack.exe
 C:\Users\Trigenite\source\repos\BlackJack\BlackJack21\obj\Debug\BlackJack.pdb
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\bin\Debug\BlackJack.ConsoleTestCase.exe.config
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\bin\Debug\BlackJack.ConsoleTestCase.exe
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\bin\Debug\BlackJack.ConsoleTestCase.pdb
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\bin\Debug\Blackjack21.Game.dll
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\bin\Debug\Blackjack21.Game.pdb
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\obj\Debug\Blackjack21.ConsoleTestCase.csprojAssemblyReference.cache
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\obj\Debug\Blackjack21.ConsoleTestCase.csproj.CoreCompileInputs.cache
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\obj\Debug\Blackjack21.ConsoleTestCase.csproj.CopyComplete
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\obj\Debug\BlackJack.ConsoleTestCase.exe
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleTestCase\obj\Debug\BlackJack.ConsoleTestCase.pdb

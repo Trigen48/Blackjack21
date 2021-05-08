@@ -10,7 +10,7 @@
         private int _cardValue = 0;
 
         /// <summary>
-        /// Initialize the card based on input parameters
+        /// Initializes the card object
         /// </summary>
         /// <param name="cardType">Set Card Type</param>
         /// <param name="cardSymbol">Set Card Symbol</param>
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// Sets or gets card's type
+        /// Gets card's type
         /// </summary>
         public CardType CardType
         {
@@ -75,13 +75,23 @@
         }
 
         /// <summary>
-        /// Compare if the card is the same type as this card
+        /// Compare the card type against the another card
         /// </summary>
         /// <param name="card">Card to compare with</param>
-        /// <returns></returns>
+        /// <returns>Returns if the card type is the same as the other card type</returns>
         public bool CompareCardType(Card card)
         {
             return card != null && card.CardType == this.CardType;
+        }
+
+        /// <summary>
+        /// Compare the card value against the another card
+        /// </summary>
+        /// <param name="card">Card to compare with</param>
+        /// <returns>Returns if the card value is the same as the other card value</returns>
+        public bool CompareCardValue(Card card)
+        {
+            return card != null && card.CardValue == this.CardValue;
         }
 
         /// <summary>
@@ -96,89 +106,12 @@
         }
 
         /// <summary>
-        /// Returns the card as a string value
+        /// Returns the card name as a string value
         /// </summary>
-        /// <returns></returns>
+        /// <returns>returns the string name of the card</returns>
         public override string ToString()
         {
-
-            string cardName = "";
-            switch (this.CardType)
-            {
-                case CardType.ACE:
-                    cardName = "ACE OF ";
-                    break;
-
-                case CardType.TWO:
-                    cardName = "TWO OF ";
-                    break;
-
-                case CardType.THREE:
-                    cardName = "THREE OF ";
-                    break;
-
-                case CardType.FOUR:
-                    cardName = "FOUR OF ";
-                    break;
-
-                case CardType.FIVE:
-                    cardName = "FIVE OF ";
-                    break;
-
-                case CardType.SIX:
-                    cardName = "SIX OF ";
-                    break;
-
-                case CardType.SEVEN:
-                    cardName = "SEVEN OF ";
-                    break;
-
-                case CardType.EIGHT:
-                    cardName = "EIGHT OF ";
-                    break;
-
-                case CardType.NINE:
-                    cardName = "NINE OF ";
-                    break;
-
-                case CardType.TEN:
-                    cardName = "TEN OF ";
-                    break;
-
-                case CardType.JACK:
-                    cardName = "JACK OF ";
-                    break;
-
-                case CardType.QUEEN:
-                    cardName = "QUEEN OF ";
-                    break;
-
-                case CardType.KING:
-                    cardName = "KING OF ";
-                    break;
-            }
-
-            switch (this._cardSymbol)
-            {
-                case CardSymbol.CLUBS:
-                    cardName += "CLUBS";
-                    break;
-
-                case CardSymbol.SPADES:
-                    cardName += "SPADES";
-                    break;
-
-                case CardSymbol.HEARTS:
-                    cardName += "HEARTS";
-                    break;
-
-                case CardSymbol.DIAMONDS:
-                    cardName += "DIAMONDS";
-                    break;
-
-            }
-
-            return cardName;
+            return this.CardType + " OF " + this._cardSymbol.ToString(); ;
         }
 
     }

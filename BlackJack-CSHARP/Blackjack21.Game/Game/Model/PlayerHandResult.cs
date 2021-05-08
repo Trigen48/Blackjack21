@@ -12,7 +12,8 @@
         PLAYER_BUST_OVER_21 = 4, // Player lost value over 21
         PLAYER_HAND_LOWER = 5, // Players hand is lower then the dealer
         PLAYER_HAND_LOWER_BLACKJACK = 6, // Players hand is lower then the dealer's hand when the dealer has a blackjack result
-        PLAYER_HAND_PUSH = 7, // Player tied with dealer
-        PLAYER_HAND_PUSH_BLACKJACK = 8 // Player tied with the dealers black jack
+        PLAYER_HAND_FOLD = 7, // Player folded their hand, gave up
+        PLAYER_HAND_PUSH = 8, // Player tied with dealer
+        PLAYER_HAND_PUSH_BLACKJACK = 9 // Player tied with the dealers black jack
     }
 }

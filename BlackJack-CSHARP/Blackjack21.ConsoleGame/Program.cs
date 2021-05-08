@@ -98,7 +98,7 @@ namespace Blackjack21.ConsoleGame
                 Console.Write("[{0}] ", card.ToString());
             }
             Console.WriteLine();
-            Console.WriteLine("-- Hand Value: {0}", player.FirstHandValue);
+            Console.WriteLine("-- Hand Value: {0}", player.SplitHandValue);
             Console.WriteLine();
 
         }
@@ -325,7 +325,7 @@ namespace Blackjack21.ConsoleGame
         static void PlayerOptions(ref Player player)
         {
 
-            if (player.FirstHand.IsBlackjack)
+            if (player.FirstHand.IsNaturalBlackjack)
             {
                 return;
             }
@@ -355,7 +355,7 @@ namespace Blackjack21.ConsoleGame
                                 player.AddFirstHandCard(game.HitCard());
                                 player.AddSplitHandCard(game.HitCard());
 
-                                Console.WriteLine("");
+                                Console.Clear();
                                 Console.WriteLine("Player has split their hand");
                                 exitSplit = true;
                             }
@@ -425,16 +425,16 @@ namespace Blackjack21.ConsoleGame
                         {
                             if (!player.CanFold)
                             {
-                                throw new InvalidCardAction("Player cannot fold this hand");
+                                throw new InvalidCardActionException("Player cannot fold this hand");
 
                             }
 
                             player.Fold();
-                            Console.WriteLine("");
+                            Console.Clear();
                             Console.WriteLine("Player has folded their hand");
                             exitCode = true;
                         }
-                        catch (InvalidCardAction ex)
+                        catch (InvalidCardActionException ex)
                         {
                             WriteError(ex.Message);
                         }
@@ -449,12 +449,12 @@ namespace Blackjack21.ConsoleGame
                         {
                             if (!player.CanHit)
                             {
-                                throw new InvalidCardAction("Player cannot hit this hand");
+                                throw new InvalidCardActionException("Player cannot hit this hand");
 
                             }
 
                             player.AddFirstHandCard(game.HitCard());
-                            Console.WriteLine("");
+                            Console.Clear();
                             Console.WriteLine("Player has added a card to their hand");
 
                             Console.WriteLine();
@@ -467,7 +467,7 @@ namespace Blackjack21.ConsoleGame
                             }
 
                         }
-                        catch (InvalidCardAction ex)
+                        catch (InvalidCardActionException ex)
                         {
                             WriteError(ex.Message);
                         }
@@ -482,16 +482,16 @@ namespace Blackjack21.ConsoleGame
                         {
                             if (!player.CanStand)
                             {
-                                throw new InvalidCardAction("Player cannot stand on this hand");
+                                throw new InvalidCardActionException("Player cannot stand on this hand");
 
                             }
 
                             player.Stand();
-                            Console.WriteLine("");
+                            Console.Clear();
                             Console.WriteLine("Player stands");
                             exitCode = true;
                         }
-                        catch (InvalidCardAction ex)
+                        catch (InvalidCardActionException ex)
                         {
                             WriteError(ex.Message);
                         }
@@ -505,11 +505,11 @@ namespace Blackjack21.ConsoleGame
                         {
                             if (!player.CanDouble)
                             {
-                                throw new InvalidCardAction("Player cannot double this hand");
+                                throw new InvalidCardActionException("Player cannot double this hand");
                             }
 
                             player.DoubleHand(game.HitCard());
-                            Console.WriteLine("");
+                            Console.Clear();
                             Console.WriteLine("Player has doubled their hand");
                             Console.WriteLine();
                             ShowPlayerCards(player);
@@ -520,7 +520,7 @@ namespace Blackjack21.ConsoleGame
 
                             exitCode = true;
                         }
-                        catch (InvalidCardAction ex)
+                        catch (InvalidCardActionException ex)
                         {
                             WriteError(ex.Message);
                         }
@@ -529,8 +529,8 @@ namespace Blackjack21.ConsoleGame
 
                     case ConsoleKey.D5:
                     case ConsoleKey.NumPad5:
-                        Console.WriteLine("");
-                        Console.WriteLine("");
+                   
+                        Console.Clear();
                         ShowFirstTableCards();
                         break;
 
@@ -548,7 +548,7 @@ namespace Blackjack21.ConsoleGame
             Console.Clear();
 
 
-            WriteHeadingLine("Player " + player.PlayerName + "'s turn Hand 2");
+            WriteHeadingLine("Player " + player.PlayerName + "'s turn Split Hand");
             bool exitCode = false;
 
             while (!exitCode && player.SplitHandValue < PlayerHand.MAX_HAND_VALUE)
@@ -579,12 +579,12 @@ namespace Blackjack21.ConsoleGame
                         {
                             if (!player.CanHitSplitHand)
                             {
-                                throw new InvalidCardAction("Player cannot hit split hand");
+                                throw new InvalidCardActionException("Player cannot hit split hand");
 
                             }
 
                             player.AddSplitHandCard(game.HitCard());
-                            Console.WriteLine("");
+                            Console.Clear();
                             Console.WriteLine("Player has added a card to their hand");
                             Console.WriteLine();
                             ShowPlayerSplitCards(player);
@@ -595,7 +595,7 @@ namespace Blackjack21.ConsoleGame
                             }
 
                         }
-                        catch (InvalidCardAction ex)
+                        catch (InvalidCardActionException ex)
                         {
                             WriteError(ex.Message);
                         }
@@ -610,16 +610,16 @@ namespace Blackjack21.ConsoleGame
                         {
                             if (!player.CanStandSplitHand)
                             {
-                                throw new InvalidCardAction("Player cannot stand on this hand");
+                                throw new InvalidCardActionException("Player cannot stand on this hand");
 
                             }
 
                             player.StandSplitHand();
-                            Console.WriteLine("");
+                            Console.Clear();
                             Console.WriteLine("Player stands");
                             exitCode = true;
                         }
-                        catch (InvalidCardAction ex)
+                        catch (InvalidCardActionException ex)
                         {
                             WriteError(ex.Message);
                         }
@@ -633,11 +633,11 @@ namespace Blackjack21.ConsoleGame
                         {
                             if (!player.CanDoubleSplitHand)
                             {
-                                throw new InvalidCardAction("Player cannot double this hand");
+                                throw new InvalidCardActionException("Player cannot double this hand");
                             }
 
                             player.DoubleSplitHand(game.HitCard());
-                            Console.WriteLine("");
+                            Console.Clear();
                             Console.WriteLine("Player has doubled their hand");
                             Console.WriteLine();
                             ShowPlayerSplitCards(player);
@@ -648,7 +648,7 @@ namespace Blackjack21.ConsoleGame
 
                             exitCode = true;
                         }
-                        catch (InvalidCardAction ex)
+                        catch (InvalidCardActionException ex)
                         {
                             WriteError(ex.Message);
                         }
@@ -657,8 +657,7 @@ namespace Blackjack21.ConsoleGame
 
                     case ConsoleKey.D4:
                     case ConsoleKey.NumPad4:
-                        Console.WriteLine("");
-                        Console.WriteLine("");
+                        Console.Clear();
                         ShowFirstTableCards();
                         break;
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Blackjack21.Game.Model;
+using Blackjack21.Game.Exceptions;
 
 namespace Blackjack21.Game.Logic
 {
@@ -17,7 +18,7 @@ namespace Blackjack21.Game.Logic
 
         // Keep track of the number of ace cards in the players hand
         private int aceCount = 0;
-        
+
         /// <summary>
         /// Initialize the player's hand
         /// </summary>
@@ -55,6 +56,27 @@ namespace Blackjack21.Game.Logic
 
             this._handValue += card.CardValue;
         }
+
+
+        /// <summary>
+        /// Returns the player's card based on the provided card index, throws an exception if the player's card is not found
+        /// </summary>
+        /// <param name="cardIndex">The player's card index</param>
+        /// <returns>Returns the players card</returns>
+        public Card this[int cardIndex]
+        {
+            get
+            {
+                if (cardIndex >= 0 && this._cards.Count > cardIndex)
+                {
+                    return this._cards[cardIndex];
+                }
+
+                throw new PlayerCardNotFoundException();
+            }
+        }
+
+       
 
         /// <summary>
         /// Returns the players hand result
@@ -163,7 +185,7 @@ namespace Blackjack21.Game.Logic
         /// <summary>
         /// Checks if the hand is an automatic blackjack
         /// </summary>
-        public bool IsBlackjack
+        public bool IsNaturalBlackjack
         {
             get
             {
@@ -187,7 +209,7 @@ namespace Blackjack21.Game.Logic
         /// </summary>
         public void SetDealerResult()
         {
-            if (this.IsBlackjack)
+            if (this.IsNaturalBlackjack)
             {
                 this._playerHandResult = PlayerHandResult.PLAYER_WON_BLACKJACK;
             }
@@ -203,12 +225,12 @@ namespace Blackjack21.Game.Logic
         /// </summary>
         /// <param name="dealerHand">The dealer's hand to comapre to the current hand</param>
         /// <param name="IsSingleHand">Set if the the hand is from a split</param>
-        public void SetHandResult(PlayerHand dealerHand, bool IsSingleHand = false)
+        public void SetPlayerHandResult(PlayerHand dealerHand, bool IsSingleHand = false)
         {
             
-            if (IsSingleHand && this.IsBlackjack)
+            if (IsSingleHand && this.IsNaturalBlackjack)
             {
-                if (this.IsBlackjack == dealerHand.IsBlackjack)
+                if (this.IsNaturalBlackjack == dealerHand.IsNaturalBlackjack)
                 {
                     this._playerHandResult = PlayerHandResult.PLAYER_HAND_PUSH_BLACKJACK;
                 }
@@ -220,9 +242,13 @@ namespace Blackjack21.Game.Logic
             }
             else
             {
-                if (dealerHand.IsBlackjack)
+                if (dealerHand.IsNaturalBlackjack)
                 {
                     this._playerHandResult = PlayerHandResult.PLAYER_HAND_LOWER_BLACKJACK;
+                }
+                else if(this._playerHandAction == PlayerHandAction.FOLD)
+                {
+                    this._playerHandResult = PlayerHandResult.PLAYER_HAND_FOLD;
                 }
                 else if (this.HandValue > MAX_HAND_VALUE)
                 {
@@ -240,6 +266,7 @@ namespace Blackjack21.Game.Logic
                 {
                     this._playerHandResult = PlayerHandResult.PLAYER_WON_5_CARD_CHARLIE;
                 }
+
                 else
                 {
                     this._playerHandResult = PlayerHandResult.PLAYER_WON_HIGHER;

@@ -9,9 +9,9 @@ namespace Blackjack21.Game.Exceptions
     /// <summary>
     /// Throws an exception if the player performs an invalid hand action
     /// </summary>
-    public class InvalidCardAction : Exception
+    public class InvalidCardActionException : Exception
     {
-        public InvalidCardAction(string message): base(message)
+        public InvalidCardActionException(string message): base(message)
         {
 
         }

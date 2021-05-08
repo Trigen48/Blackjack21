@@ -40,8 +40,9 @@
   <ItemGroup>
     <Compile Include="Game\BlackJackGame.cs" />
     <Compile Include="Game\Exceptions\DeckEmptyException.cs" />
-    <Compile Include="Game\Exceptions\InvalidCardAction.cs" />
+    <Compile Include="Game\Exceptions\InvalidCardActionException.cs" />
     <Compile Include="Game\Exceptions\InvalidHandSplitException.cs" />
+    <Compile Include="Game\Exceptions\PlayerCardNotFoundException.cs" />
     <Compile Include="Game\Exceptions\PlayerExistsException.cs" />
     <Compile Include="Game\Exceptions\PlayerHandNotSplitException.cs" />
     <Compile Include="Game\Exceptions\PlayerNameEmptyException.cs" />

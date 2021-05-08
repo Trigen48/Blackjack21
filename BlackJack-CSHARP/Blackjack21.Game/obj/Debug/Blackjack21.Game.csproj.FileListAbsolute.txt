@@ -1,0 +1,6 @@
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.Game\bin\Debug\Blackjack21.Game.dll
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.Game\bin\Debug\Blackjack21.Game.pdb
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.Game\obj\Debug\Blackjack21.Game.csprojAssemblyReference.cache
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.Game\obj\Debug\Blackjack21.Game.csproj.CoreCompileInputs.cache
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.Game\obj\Debug\Blackjack21.Game.dll
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.Game\obj\Debug\Blackjack21.Game.pdb

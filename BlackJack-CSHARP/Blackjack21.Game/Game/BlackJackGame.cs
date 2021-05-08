@@ -14,7 +14,8 @@ namespace Blackjack21.Game
         private readonly Player _dealer;
         private readonly List<Player> _players;
         private readonly CardDeck _deck;
-
+        public const int MIN_DECK_CARDS = 10;
+        public const int MINIMUM_DEALER_VALUE = 17;
 
         /// <summary>
         /// initialize the blackjack game
@@ -40,8 +41,7 @@ namespace Blackjack21.Game
         /// </summary>
         public void NewGame()
         {
-            const int MIN_DECK_CARDS = 10;
-
+           
             this._dealer.ClearHands();
 
             foreach (Player player in this._players)
@@ -99,8 +99,6 @@ namespace Blackjack21.Game
         /// </summary>
         public void DealerHit()
         {
-            const int MINIMUM_DEALER_VALUE = 17;
-
             while(this._dealer.FirstHandValue < MINIMUM_DEALER_VALUE)
             {
                 this.AddDealerCard(this.HitCard());
@@ -235,6 +233,41 @@ namespace Blackjack21.Game
 
                 throw new PlayerNotFoundException(playerName);
             }
+        }
+
+        /// <summary>
+        /// Get the number of players on the table
+        /// </summary>
+        public int PlayerCount
+        {
+            get
+            {
+                return this._players.Count;
+            }
+        }
+
+        /// <summary>
+        /// Removes player the game using the player name, throws an exception if the player is not found
+        /// </summary>
+        /// <param name="playerName">Player Name to remove</param>
+        public void RemovePlayer(string playerName)
+        {
+            int index = FindPlayerIndex(playerName);
+            RemovePlayer(index);
+        }
+
+        /// <summary>
+        /// Removes the player from the game using the index, throws an exception if the player is not found
+        /// </summary>
+        /// <param name="index">Index of the player</param>
+        public void RemovePlayer(int index)
+        {
+            if (this._players.Count > index && index >= 0)
+            {
+                this._players.RemoveAt(index);
+            }
+
+            throw new PlayerNotFoundException(index);
         }
 
 

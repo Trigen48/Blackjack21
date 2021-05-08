@@ -1,0 +1,10 @@
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\bin\Debug\Blackjack21.ConsoleGame.exe.config
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\bin\Debug\Blackjack21.ConsoleGame.exe
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\bin\Debug\Blackjack21.ConsoleGame.pdb
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\bin\Debug\Blackjack21.Game.dll
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\bin\Debug\Blackjack21.Game.pdb
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\obj\Debug\Blackjack21.ConsoleGame.csprojAssemblyReference.cache
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\obj\Debug\Blackjack21.ConsoleGame.csproj.CoreCompileInputs.cache
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\obj\Debug\Blackjack21.ConsoleGame.csproj.CopyComplete
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\obj\Debug\Blackjack21.ConsoleGame.exe
+D:\Work\Repository\Entelect\Blackjack21\BlackJack-CSHARP\Blackjack21.ConsoleGame\obj\Debug\Blackjack21.ConsoleGame.pdb
